@@ -61,7 +61,6 @@ public class Seb extends Characters.Thing {
             return currentStress += increment;
         }
         else{
-            System.out.println("the stress overtakes poor seb");
             return currentStress = maxStress;
         }
 
