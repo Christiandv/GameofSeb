@@ -1,6 +1,7 @@
 package Levels;
 
 import Characters.BackwardsSeb;
+import Characters.Fireball;
 import Characters.Seb;
 import Characters.Spider;
 import Engines.GameState;
@@ -41,21 +42,25 @@ public class SebimonFight extends Level {
 
         else if (counter >= 2) {
             //rounds of combat
+            Graphics gi = background.getGraphics();
+            gi.setColor(Color.BLACK);
             if (e.getKeyChar() == '1')
             {
-
+                gi.drawString("Seb used Stress Ball!",30*2+20,30*3+8);
+                objects[5][21] = new Fireball(16, 16);
+                spiderHp = 0;
             }
             else if (e.getKeyChar() == '2')
             {
-
+                gi.drawString("Seb cries: Have mercy on me!",30*2+20,30*3+8);
             }
             else if (e.getKeyChar() == '3')
             {
-
+                gi.drawString("Raid hasn't been programmed in!",30*2+20,30*3+8);
             }
             else
             {
-
+                gi.drawString("The spider is too fast to be outrun!",30*2+20,30*3+8);
             }
 
             counter++;
@@ -63,6 +68,7 @@ public class SebimonFight extends Level {
 
         else if (spiderHp <= 0) {
             //win
+
         }
 
         else if (seb.currentStress >= 100){
