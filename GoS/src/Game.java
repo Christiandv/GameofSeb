@@ -38,7 +38,7 @@ public class Game extends JFrame {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setBounds(0,0,screenSize.width, screenSize.height);
         setVisible(true);
-
+        GE.repaint(levels.get(currentLevel).getGameState());
 
     }
     public void turn(){

@@ -1,6 +1,8 @@
 package Engines;
 
 
+import Characters.Thing;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -42,7 +44,15 @@ public class GraphicsEngine extends JPanel  {
         g.setColor(Color.white);
         g.fillRect(0,0,WIDTH,HEIGHT);
         //g.drawImage(img, x,y,width, height, null);
+        g.setColor(Color.black);
+        g.drawRect(100,100,100,100);
+        for(Thing t: GS.things){
+            g.drawRect(t.x*16,t.y*16,16,16);
+            g.drawImage(t.getImage(),t.x*16,t.y*16,16,16,this);
+        }
 
+
+        // JUST SCALE THE BUFFERED IMAGE DRAW
     }
 
 
