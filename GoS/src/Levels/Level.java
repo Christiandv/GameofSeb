@@ -13,6 +13,7 @@ public abstract class Level {
     Thing[][] objects;
     Seb seb;
     boolean nextLevel = false;
+    boolean endScreen = false;
     public Image background;
     boolean stressBar;
 
@@ -27,7 +28,7 @@ public abstract class Level {
 
 
         // do other things
-        return new GameState(objects,seb, background, stressBar, nextLevel);
+        return new GameState(objects,seb, background, stressBar, nextLevel, endScreen);
     }
 
 }

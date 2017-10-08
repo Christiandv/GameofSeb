@@ -23,7 +23,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class GraphicsEngine extends JPanel implements ActionListener{
     ArrayList<Level> levels = new ArrayList<Level>();
-    int currentLevel = 0;
+    int currentLevel = 1;
 
     BufferedImage bi;
     Graphics gi;
@@ -37,6 +37,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
     Image stressBar;
 
     public GraphicsEngine(int width, int height) {
+        levels.add(new End());
         levels.add(new Opening());
         levels.add(new Level1());
         levels.add(new WalkToClass());
@@ -111,9 +112,17 @@ public class GraphicsEngine extends JPanel implements ActionListener{
         GS=levels.get(currentLevel).takeTurn();
         if(GS.nextLevel == true){
             int stress = GS.seb.currentStress;
-            this.currentLevel++;
-            GS = levels.get(currentLevel).getGameState();
-            GS.seb.currentStress = stress;
+            //GS.seb.currentStress = stress;
+            if (stress == 100)
+            {
+                this.currentLevel = 0;
+                GS = levels.get(currentLevel).getGameState();
+            }
+            else
+            {
+                this.currentLevel++;
+                GS = levels.get(currentLevel).getGameState();
+            }
         }
        // repaint(GS);
         repaint();

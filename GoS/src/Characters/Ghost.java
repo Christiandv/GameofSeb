@@ -11,5 +11,6 @@ public class Ghost extends Thing
     {
         super(x, y);
         isSolid = false;
+        image = new ImageIcon("src/Characters/resources/ghost.gif").getImage();
     }
 }
