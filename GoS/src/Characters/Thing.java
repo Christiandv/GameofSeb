@@ -20,6 +20,7 @@ public class Thing {
         y = 0;
     }
 
+
     public Thing(int x, int y) {
 
         this.x = x;
