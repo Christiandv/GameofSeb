@@ -3,9 +3,9 @@ package Characters;
 import java.awt.*;
 
 public class InvisibleWall extends Thing {
-    public InvisibleWall(int x, int y){
-        super(x,y);
+    public InvisibleWall(){
         isSolid = true;
+        isVisable = false;
     }
     public void draw(Graphics g){
 
