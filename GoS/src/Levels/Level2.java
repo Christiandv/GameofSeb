@@ -95,7 +95,6 @@ public class Level2 extends Level {
             for(int j = 0; j < after[0].length; j++){
                 if(objects[i][j] != null){
                     if(objects[i][j] instanceof Teacher){
-                        System.out.println();
                         Teacher T = (Teacher)objects[i][j];
                         if(turnNum%2 ==0){
                             double r = Math.random();
@@ -121,7 +120,6 @@ public class Level2 extends Level {
                             }
                         }
                     }
-
                 }
             }
         }

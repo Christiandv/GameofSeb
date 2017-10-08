@@ -1,5 +1,6 @@
 package Levels;
 
+import Characters.Bus;
 import Characters.InvisibleWall;
 import Characters.Seb;
 import Characters.Thing;
@@ -69,8 +70,8 @@ public class Level1 extends Level {
 
     public Level1() {
         objects = new Characters.Thing[30][30];
-        seb = new Seb(6, 6);
-        objects[2][2] = new Thing(10,4);
+        seb = new Seb(2, 22);
+        objects[2][2] = new Bus(7,4);
         objects[2][2].isSolid = true;
         objects[2][2].loadImage("resources/rts bus.png");
         //objects[2][3] = new InvisibleWall(2,3);
@@ -79,11 +80,27 @@ public class Level1 extends Level {
 
     @Override
     public GameState takeTurn() {
-        if(seb.x >= 29 && 11 <= seb.y && seb.y >= 13 ){
+        Thing[][] after = new Thing[30][30];
+        if(seb.x >= 29 && 3 <= seb.y && seb.y >= 4 ){
             nextLevel = true;
         }
-        Thing b = objects[2][2];
-       // b.y++;
+       // Thing b = objects[2][2];
+        for(int i = 0; i < after.length; i++) {
+            for (int j = 0; j < after[0].length; j++) {
+                if (objects[i][j] != null) {
+                    if (objects[i][j] instanceof Bus) {
+                        Bus bus = (Bus) objects[i][j];
+                        //System.out.println("kllk   " + i);
+                        if(i+1 <=29){
+                            after[i+1][j] = bus;
+                        }else{
+                            bus.isVisable = false;
+                        }
+                    }
+                }
+            }
+        }
+        objects = after;
         return getGameState();
     }
 }
