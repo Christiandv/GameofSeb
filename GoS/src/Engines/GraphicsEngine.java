@@ -17,6 +17,8 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import javax.swing.*;
+import java.awt.*;
+import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
 import java.awt.event.ActionEvent;
@@ -67,7 +69,8 @@ public class GraphicsEngine extends JPanel implements ActionListener{
     private void drawLevel(Graphics g) {
         gi.setColor(Color.white);
         gi.fillRect(0, 0, 30 * 16, 30 * 16);
-        //g.drawImage(img, x,y,width, height, null);
+        gi.drawImage(GS.background, 0,0,30*16, 30*16, null);
+
         Thing[][] things = GS.things;
         for (int i = 0; i < things.length; i++) {
             for (int j = 0; j < things[0].length; j++) {
@@ -112,4 +115,5 @@ public class GraphicsEngine extends JPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         repaint();
     }
+
 }

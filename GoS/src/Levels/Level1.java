@@ -6,6 +6,7 @@ import Characters.Seb;
 import Characters.Thing;
 import Engines.GameState;
 
+import javax.swing.*;
 import java.awt.event.KeyEvent;
 
 
@@ -75,6 +76,7 @@ public class Level1 extends Level {
         objects[2][2].isSolid = true;
         objects[2][2].loadImage("resources/rts bus.png");
         //objects[2][3] = new InvisibleWall(2,3);
+        background = new ImageIcon(this.getClass().getResource("backgrounds/street.png")).getImage();
 
     }
 

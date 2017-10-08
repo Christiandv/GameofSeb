@@ -4,6 +4,7 @@ import Characters.Seb;
 import Characters.Thing;
 import Engines.GameState;
 
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
@@ -12,6 +13,7 @@ public abstract class Level {
     Thing[][] objects;
     Seb seb;
     boolean nextLevel = false;
+    public Image background;
 
 
     // handle key presses. return true if a turn should be taken.
@@ -24,7 +26,7 @@ public abstract class Level {
 
 
         // do other things
-        return new GameState(objects,seb, nextLevel);
+        return new GameState(objects,seb, background, nextLevel);
     }
 
 }

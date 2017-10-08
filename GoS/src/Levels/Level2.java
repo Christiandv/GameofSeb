@@ -6,6 +6,7 @@ import Characters.Teacher;
 import Characters.Thing;
 import Engines.GameState;
 
+import javax.swing.*;
 import java.awt.event.KeyEvent;
 
 public class Level2 extends Level {
@@ -84,6 +85,8 @@ public class Level2 extends Level {
         objects[20][15] = new Teacher();
         objects[15][4] = new Teacher();
         objects[16][20] = new Teacher();
+
+        background = new ImageIcon(this.getClass().getResource("backgrounds/street.png")).getImage();
     }
 
     @Override

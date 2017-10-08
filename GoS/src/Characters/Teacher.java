@@ -11,6 +11,6 @@ public class Teacher extends Thing
     {
         super(1,1);
         isSolid = true;
-        image = (new ImageIcon(this.getClass().getResource("resources/seb.gif"))).getImage();
+        image = (new ImageIcon(this.getClass().getResource("resources/teacher.gif"))).getImage();
     }
 }
