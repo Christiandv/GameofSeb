@@ -16,13 +16,13 @@ import java.util.ArrayList;
  * Created by joseffentonlenz on 10/8/17.
  */
 public class SebimonFight extends Level {
-    int counter = 0;
+    int counter = 1;
     int spiderHp = 100;
     ArrayList<String> menu = new ArrayList<String>();
 
     @Override
     public boolean receiveInput(KeyEvent e) {
-        counter++;
+
 
         if (counter == 1) {
             Graphics gi = background.getGraphics();
@@ -46,21 +46,36 @@ public class SebimonFight extends Level {
             gi.setColor(Color.BLACK);
             if (e.getKeyChar() == '1')
             {
-                gi.drawString("Seb used Stress Ball!",30*2+20,30*3+8);
+                gi.setColor(Color.white);
+                gi.fillRect(0,200, 16 * 16, 16 * 4);
+                gi.setColor(Color.black);
+                gi.drawString("Seb used Stress Ball!",25,225);
                 objects[5][21] = new Fireball(16, 16);
                 spiderHp = 0;
             }
             else if (e.getKeyChar() == '2')
             {
-                gi.drawString("Seb cries: Have mercy on me!",30*2+20,30*3+8);
+                gi.setColor(Color.white);
+                gi.fillRect(0,200, 16 * 16, 16 * 4);
+                gi.setColor(Color.black);
+                gi.drawString("Seb cries: Have mercy on me!",25,225);
+                counter = 0;
             }
             else if (e.getKeyChar() == '3')
             {
-                gi.drawString("Raid hasn't been programmed in!",30*2+20,30*3+8);
+                gi.setColor(Color.white);
+                gi.fillRect(0,200, 16 * 16, 16 * 4);
+                gi.setColor(Color.black);
+                gi.drawString("Raid hasn't been programmed in!",25,225);
+                counter = 0;
             }
             else
             {
-                gi.drawString("The spider is too fast to be outrun!",30*2+20,30*3+8);
+                gi.setColor(Color.white);
+                gi.fillRect(0,200, 16 * 16, 16 * 4);
+                gi.setColor(Color.black);
+                gi.drawString("The spider is too fast to be outrun!",25,225);
+                counter = 0;
             }
 
             counter++;
