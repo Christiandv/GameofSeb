@@ -52,7 +52,7 @@ public class Seb extends Characters.Thing {
     }
     public int getFinalScore()
     {
-        this.score = (interviews + spidersKilled + popQuizScore - currentStress);
+        this.score = (maxStress- currentStress);
         return score;
     }
 

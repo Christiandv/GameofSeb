@@ -23,7 +23,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class GraphicsEngine extends JPanel implements ActionListener{
     ArrayList<Level> levels = new ArrayList<Level>();
-    int currentLevel = 7;
+    int currentLevel = 9;
 
     BufferedImage bi;
     Graphics gi;
@@ -47,6 +47,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
         levels.add(new Level3());
         levels.add(new Winning());
         levels.add(new SebimonFight());
+        levels.add(new ActualWin());
         GS = levels.get(currentLevel).getGameState();
         WIDTH = width;
         addKeyListener(new TAdapter());
@@ -128,7 +129,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
                 this.currentLevel = 0;
                 GS = levels.get(currentLevel).getGameState();
             }
-            else if (currentLevel == 8)
+            else if (currentLevel == 9)
             {
                 this.currentLevel = 1;
                 GS = levels.get(currentLevel).getGameState();
