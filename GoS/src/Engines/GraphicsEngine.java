@@ -42,6 +42,8 @@ public class GraphicsEngine extends JPanel implements ActionListener{
         levels.add(new Level1());
         levels.add(new WalkToClass());
         levels.add(new Level2());
+        levels.add(new HomeTransition());
+        levels.add(new Level3());
         GS = levels.get(currentLevel).getGameState();
         WIDTH = width;
         addKeyListener(new TAdapter());
