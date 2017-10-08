@@ -22,7 +22,7 @@ public class Game extends JFrame {
         final int HEIGHT = 460;
         GE = new GraphicsEngine(WIDTH, HEIGHT -40);
         add(GE);
-
+        levels.add(new Level1());
         setSize(WIDTH, HEIGHT);
 
         setTitle("Game");

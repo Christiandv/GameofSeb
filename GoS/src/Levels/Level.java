@@ -1,4 +1,5 @@
 package Levels;
+
 import Characters.Thing;
 import Engines.GameState;
 
@@ -20,7 +21,8 @@ public abstract class Level {
         ArrayList<Thing> things = new ArrayList<Thing>();
         for (int i = 0; i < objects.length; i++) {
             for (int j = 0; j < objects[0].length; j++) {
-                things.add(objects[i][j]);
+                if (objects[i][j] != null)
+                    things.add(objects[i][j]);
             }
         }
         // do other things

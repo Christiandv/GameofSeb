@@ -1,7 +1,6 @@
 
 package Characters;
-import java.awt.Image;
-import java.awt.Rectangle;
+import java.awt.*;
 import javax.swing.ImageIcon;
 
 public class Thing {
@@ -38,6 +37,10 @@ public class Thing {
 
         ImageIcon ii = new ImageIcon(imageName);
         image = ii.getImage();
+    }
+
+    public void draw(Graphics g){
+        g.drawImage(image, x*16, y*16,16,16,null);
     }
 
     public Image getImage() {
