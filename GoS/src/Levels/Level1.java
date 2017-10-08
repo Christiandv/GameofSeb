@@ -13,10 +13,9 @@ public class Level1 extends Level {
 
     public Level1(){
         objects = new Characters.Thing[30][30];
-        objects[2][2] = new Thing(29,29);
-        objects[2][2].loadImage("src/Images/seb.gif");
-        objects[3][5] = new Thing(0,0);
-        objects[3][5].loadImage("src/Images/spider.gif");
+        objects[2][2] = new Thing(2,2);
+        objects[2][2].loadImage("src/Characters/resources/seb.gif");
+
     }
 
     @Override
