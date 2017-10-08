@@ -50,9 +50,10 @@ public class Seb extends Characters.Thing {
     public void draw(Graphics g){
         draw(g,x,y);
     }
-    public void getFinalScore()
+    public int getFinalScore()
     {
         this.score = (interviews + spidersKilled + popQuizScore - currentStress);
+        return score;
     }
 
     public int addStress (int increment){

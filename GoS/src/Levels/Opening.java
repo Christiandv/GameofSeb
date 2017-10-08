@@ -46,6 +46,14 @@ public class Opening extends Level {
         seb = new Seb(10, 20);
         seb.width = 10;
         seb.height = 10;
+        //seb.currentStress = 0;
+        //seb.popQuizScore = 0;
+        //seb.score = 0;
+        //seb.interviews = 0;
+        //seb.spidersKilled = 0;
+        //seb.textbook = false;
+        //seb.shots = 0;
+        //seb.raid = false;
 
         background = new BufferedImage(16 * 16, 16*16, BufferedImage.TYPE_INT_RGB);
         Graphics gi = background.getGraphics();
@@ -60,9 +68,19 @@ public class Opening extends Level {
     }
 
     @Override
-    public GameState takeTurn() {
-
-
-        return getGameState();
+    public GameState takeTurn()
+    {
+        GameState state = getGameState();
+        Seb seb = state.seb;
+        seb.currentStress = 0;
+        seb.popQuizScore = 0;
+        seb.score = 0;
+        seb.interviews = 0;
+        seb.spidersKilled = 0;
+        seb.textbook = false;
+        seb.shots = 0;
+        seb.raid = false;
+        state.seb = seb;
+        return state;
     }
 }
