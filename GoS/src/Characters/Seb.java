@@ -56,12 +56,12 @@ public class Seb extends Characters.Thing {
     }
 
     public int addStress (int increment){
-        if(currentStress + increment <= 100){
+        if(currentStress + increment <= maxStress){
             return currentStress += increment;
         }
         else{
             System.out.println("the stress overtakes poor seb");
-            return currentStress = 100;
+            return currentStress = maxStress;
         }
 
     }
