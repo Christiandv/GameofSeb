@@ -19,8 +19,8 @@ public class Game extends JFrame{
 
     private void initUI() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        final int WIDTH = screenSize.width;
-        final int HEIGHT = screenSize.height;
+        final int WIDTH = (int)(screenSize.width *.9);
+        final int HEIGHT = (int)(screenSize.height * .9);
         GE = new GraphicsEngine(HEIGHT, HEIGHT );
         add(GE);
 
@@ -38,7 +38,7 @@ public class Game extends JFrame{
 
         //rescales contents based on resolution and screen size
 
-        setBounds((int)((screenSize.width/2)-(screenSize.height/2)),0,screenSize.height, screenSize.height);
+        setBounds((int)((screenSize.width/2)-(HEIGHT/2)),(int)(screenSize.height*.025),HEIGHT, HEIGHT);
 
         setVisible(true);
 
