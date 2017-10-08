@@ -104,7 +104,7 @@ public class Level2 extends Level {
         objects[15][4] = new Teacher();
         objects[16][20] = new Teacher();
 
-        background = new ImageIcon(this.getClass().getResource("backgrounds/street.png")).getImage();
+        background = new ImageIcon(this.getClass().getResource("backgrounds/infinityQuad.gif")).getImage();
     }
 
     @Override
@@ -160,14 +160,14 @@ public class Level2 extends Level {
         objects = after;
         if(objects[seb.x][seb.y] != null){
             if(objects[seb.x][seb.y] instanceof Teacher){
-                seb.currentStress++; //subject to change depending on scale
+                seb.addStress(10);
             }
         }
         if(objects[seb.x+1][seb.y] != null || objects[seb.x-1][seb.y] != null || objects[seb.x][seb.y+1] != null
                 || objects[seb.x][seb.y-1] != null){
             if(objects[seb.x+1][seb.y] instanceof Teacher || objects[seb.x-1][seb.y] instanceof Teacher
                     || objects[seb.x][seb.y+1] instanceof Teacher|| objects[seb.x][seb.y-1] instanceof Teacher){
-                seb.currentStress++;
+                seb.addStress(10);
             }
         }
         System.out.println(seb.currentStress);
