@@ -64,8 +64,6 @@ public class GraphicsEngine extends JPanel  {
             gi.drawRect(t.x*16,t.y*16,16,16);
             t.draw(gi);
         }
-
-
         // JUST SCALE THE BUFFERED IMAGE DRAW
         g.drawImage(bi,0,0,WIDTH, HEIGHT, null);
     }
@@ -78,7 +76,7 @@ public class GraphicsEngine extends JPanel  {
         }
         @Override
         public void keyPressed(KeyEvent e) {
-            System.out.println(e.getKeyCode());
+
             if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
                 System.exit(0);
             }

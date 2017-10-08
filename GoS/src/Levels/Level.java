@@ -1,5 +1,6 @@
 package Levels;
 
+import Characters.Seb;
 import Characters.Thing;
 import Engines.GameState;
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 
 public abstract class Level {
     Thing[][] objects;
+    Seb seb;
 
 
     // handle key presses. return true if a turn should be taken.

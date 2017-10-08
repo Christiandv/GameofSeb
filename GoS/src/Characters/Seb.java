@@ -18,8 +18,9 @@ public class Seb extends Characters.Thing {
     public int currentStress;
     private int maxStress;
 
-    public Seb()
+    public Seb(int x, int y)
     {
+        super(x,y);
         maxStress = 100;
         currentStress = 0;
         shots = 0;
