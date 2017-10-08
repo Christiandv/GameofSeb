@@ -20,15 +20,10 @@ public abstract class Level {
     public abstract GameState takeTurn();
 
     public GameState getGameState() {
-        ArrayList<Thing> things = new ArrayList<Thing>();
-        for (int i = 0; i < objects.length; i++) {
-            for (int j = 0; j < objects[0].length; j++) {
-                if (objects[i][j] != null)
-                    things.add(objects[i][j]);
-            }
-        }
+
+
         // do other things
-        return new GameState(things,seb);
+        return new GameState(objects,seb);
     }
 
 }

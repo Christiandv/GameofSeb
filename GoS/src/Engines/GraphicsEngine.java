@@ -17,7 +17,7 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import javax.swing.*;
 
-public class GraphicsEngine extends JLabel {
+public class GraphicsEngine extends JPanel {
     ArrayList<Level> levels = new ArrayList<Level>();
     int currentLevel = 0;
 
@@ -28,23 +28,26 @@ public class GraphicsEngine extends JLabel {
     private int HEIGHT;
     private final int DELAY = 30;
     private int scroll = 0;
-    GameState GS ;
+    GameState GS;
+
     public GraphicsEngine(int width, int height) {
         levels.add(new Level1());
+
         GS = levels.get(currentLevel).getGameState();
         WIDTH = width;
         addKeyListener(new TAdapter());
         HEIGHT = height;
-        bi = new BufferedImage(30*16,30*16,BufferedImage.TYPE_INT_RGB);
+        bi = new BufferedImage(30 * 16, 30 * 16, BufferedImage.TYPE_INT_RGB);
         gi = bi.createGraphics();
         setFocusable(true);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
     }
 
-    public void repaint(GameState GS){
+    public void repaint(GameState GS) {
         this.GS = GS;
         repaint();
     }
+
     // main draw
     @Override
     public void paintComponent(Graphics g) {
@@ -56,16 +59,18 @@ public class GraphicsEngine extends JLabel {
     //  draws all of the things
     private void drawLevel(Graphics g) {
         gi.setColor(Color.white);
-        gi.fillRect(0,0,30*16,30*16);
+        gi.fillRect(0, 0, 30 * 16, 30 * 16);
         //g.drawImage(img, x,y,width, height, null);
-
-        for(Thing t: GS.things){
-            
-            t.draw(gi);
+        Thing[][] things = GS.things;
+        for (int i = 0; i < things.length; i++) {
+            for (int j = 0; j < things[0].length; j++) {
+                if (things[i][j] != null)
+                    things[i][j].draw(gi, i, j);
+            }
         }
         GS.seb.draw(gi);
         // JUST SCALE THE BUFFERED IMAGE DRAW
-        g.drawImage(bi,0,0,WIDTH, HEIGHT, null);
+        g.drawImage(bi, 0, 0, WIDTH, HEIGHT, this);
     }
 
     // takes keyboard inputs
@@ -74,17 +79,19 @@ public class GraphicsEngine extends JLabel {
         @Override
         public void keyReleased(KeyEvent e) {
         }
+
         @Override
         public void keyPressed(KeyEvent e) {
 
-            if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
                 System.exit(0);
             }
-            if(levels.get(currentLevel).receiveInput(e))
+            if (levels.get(currentLevel).receiveInput(e))
                 turn();
         }
     }
-    public void turn(){
+
+    public void turn() {
         levels.get(currentLevel).takeTurn();
         repaint(levels.get(currentLevel).getGameState());
         repaint();
