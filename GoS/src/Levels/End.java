@@ -27,9 +27,7 @@ public class End extends Level
         stressBar = false;
         objects = new Characters.Thing[30][30];
         seb = new Seb(20, 20);
-        Ghost ghost = new Ghost(10, 20);
-        seb.width = 10;
-        seb.height = 10;
+        objects[10][20] = new Ghost(10, 10);
         seb.isVisable = false;
 
         background = new BufferedImage(30 * 8, 30*8, BufferedImage.TYPE_INT_RGB);
