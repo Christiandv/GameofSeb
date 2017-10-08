@@ -19,7 +19,22 @@ public class Opening extends Level {
     public boolean receiveInput(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 
-            nextLevel = true;
+            counter += 1;
+            nextLevel = false;
+            if (counter == 1)
+            {
+                Graphics gi = background.getGraphics();
+                gi.setColor(Color.white);
+                gi.fillRect(0,0,30*8,30*8);
+                gi.setColor(Color.BLACK);
+                gi.drawString("Seb is awoken by loud vacuuming upstairs.",30*2-60,30*3);
+                gi.drawString("Press SPACE to yell at them,",30*2-10,30*5-5);
+                gi.drawString("then run to catch the bus to campus",30*2-30,30*5+7);
+            }
+            else
+            {
+                nextLevel = true;
+            }
             return true;
         }
         return false;
@@ -31,14 +46,15 @@ public class Opening extends Level {
         seb = new Seb(10, 20);
         seb.width = 10;
         seb.height = 10;
+
         background = new BufferedImage(30 * 8, 30*8, BufferedImage.TYPE_INT_RGB);
         Graphics gi = background.getGraphics();
         gi.setColor(Color.white);
         gi.fillRect(0,0,30*8,30*8);
         gi.setColor(Color.BLACK);
-        gi.drawString("SEB'S VERY BAD DAY",30*2-5,30*3);
-        gi.drawString("Press Space to be awakened",30*2-20,30*5-5);
-        gi.drawString("by your upstairs neighbors!!",30*2-15,30*5+5);
+        gi.drawString("SEB'S VERY BAD DAY",30*2-10,30*3-40);
+        gi.drawString("Made by: Christian, Joe, Ani, and Caitlin",30*2-50,30*5-30);
+        gi.drawString("Press SPACE",30*2+5,30*5+7);
 
 
     }
