@@ -51,7 +51,7 @@ public class Winning extends Level
         gi.setFont(font);
         gi.setColor(Color.black);
         gi.drawString("Finally home, Seb can rest.",30*2-6,30*3+20);
-        gi.drawString("Score: " + seb.getFinalScore(),30*2+46,30*5-6);
+        gi.drawString("Score: 50",30*2+46,30*5-6);
         gi.drawString("Press SPACE to restart",30*2+6,30*5+10);
 
     }
