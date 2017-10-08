@@ -17,11 +17,17 @@ public class GraphicsEngine extends JPanel  {
     private int HEIGHT;
     private final int DELAY = 30;
     private int scroll = 0;
+    GameState GS;
     public GraphicsEngine(int width, int height) {
         WIDTH = width;
         HEIGHT = height;
         setFocusable(true);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
+    }
+
+    public void repaint(GameState GS){
+        this.GS = GS;
+        repaint();
     }
     // main draw
     @Override

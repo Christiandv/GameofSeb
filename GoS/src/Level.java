@@ -1,7 +1,13 @@
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public abstract class Level {
     Thing[][] objects;
+
+
+    // handle key presses. return true if a turn should be taken.
+    // some actions might need to have multiple buttons pressed in sequence
+    public abstract boolean recieveInput(KeyEvent e);
 
     public abstract GameState takeTurn();
 
