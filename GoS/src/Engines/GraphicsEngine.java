@@ -2,10 +2,7 @@ package Engines;
 
 
 import Characters.Thing;
-import Levels.Level;
-import Levels.Level1;
-import Levels.Level2;
-import Levels.Opening;
+import Levels.*;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -42,6 +39,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
     public GraphicsEngine(int width, int height) {
         levels.add(new Opening());
         levels.add(new Level1());
+        levels.add(new WalkToClass());
         levels.add(new Level2());
         GS = levels.get(currentLevel).getGameState();
         WIDTH = width;
@@ -85,7 +83,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
         GS.seb.draw(gi);
         if(GS.stressBar) {
             gi.setColor(Color.green);
-            gi.fillRect(7 * 16 + 3, 28 * 16, GS.seb.currentStress, 16);
+            gi.fillRect(7 * 16 + 3, 28 * 16, (int)(234 * ((double)GS.seb.currentStress /(double) GS.seb.maxStress)), 16);
             gi.drawImage(stressBar, 7 * 16, 28 * 16, 240, 16, null);
         }
         // JUST SCALE THE BUFFERED IMAGE DRAW
