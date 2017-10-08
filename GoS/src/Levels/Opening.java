@@ -26,6 +26,7 @@ public class Opening extends Level {
     }
 
     public Opening() {
+        stressBar = false;
         objects = new Characters.Thing[30][30];
         seb = new Seb(10, 20);
         seb.width = 10;

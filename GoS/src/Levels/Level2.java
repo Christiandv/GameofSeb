@@ -95,8 +95,10 @@ public class Level2 extends Level {
     }
 
     public Level2(){
+
         objects = new Characters.Thing[30][30];
         seb = new Seb(4,2);
+        stressBar = true;
         objects[6][10] = new Teacher();
         objects[20][15] = new Teacher();
         objects[15][4] = new Teacher();

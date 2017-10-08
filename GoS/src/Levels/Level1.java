@@ -69,6 +69,7 @@ public class Level1 extends Level {
     public Level1() {
         objects = new Characters.Thing[30][30];
         seb = new Seb(2, 22);
+        stressBar = true;
         objects[2][2] = new Bus(7,4);
         //objects[2][3] = new InvisibleWall(2,3);
         background = new ImageIcon(this.getClass().getResource("backgrounds/street.png")).getImage();

@@ -14,6 +14,7 @@ public abstract class Level {
     Seb seb;
     boolean nextLevel = false;
     public Image background;
+    boolean stressBar;
 
 
     // handle key presses. return true if a turn should be taken.
@@ -26,7 +27,7 @@ public abstract class Level {
 
 
         // do other things
-        return new GameState(objects,seb, background, nextLevel);
+        return new GameState(objects,seb, background, stressBar, nextLevel);
     }
 
 }
