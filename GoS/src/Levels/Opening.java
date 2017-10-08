@@ -25,9 +25,9 @@ public class Opening extends Level {
             {
                 Graphics gi = background.getGraphics();
                 gi.setColor(Color.white);
-                gi.fillRect(0,0,30*8,30*8);
+                gi.fillRect(0,0,16*16,16*16);
                 gi.setColor(Color.BLACK);
-                gi.drawString("Seb is awoken by loud vacuuming upstairs.",30*2-60,30*3);
+                gi.drawString("Seb is awoken by loud vacuuming upstairs.",30*2-50,30*3);
                 gi.drawString("Press SPACE to yell at them,",30*2-10,30*5-5);
                 gi.drawString("then run to catch the bus to campus",30*2-30,30*5+7);
             }
@@ -47,14 +47,14 @@ public class Opening extends Level {
         seb.width = 10;
         seb.height = 10;
 
-        background = new BufferedImage(30 * 8, 30*8, BufferedImage.TYPE_INT_RGB);
+        background = new BufferedImage(16 * 16, 16*16, BufferedImage.TYPE_INT_RGB);
         Graphics gi = background.getGraphics();
         gi.setColor(Color.white);
-        gi.fillRect(0,0,30*8,30*8);
+        gi.fillRect(0,0,16*16,16*16);
         gi.setColor(Color.BLACK);
-        gi.drawString("SEB'S VERY BAD DAY",30*2-10,30*3-40);
-        gi.drawString("Made by: Christian, Joe, Ani, and Caitlin",30*2-50,30*5-30);
-        gi.drawString("Press SPACE",30*2+5,30*5+7);
+        gi.drawString("SEB'S VERY BAD DAY",30*2+6,30*3-40);
+        gi.drawString("Made by: Christian, Joe, Ani, and Caitlin",30*2-40,30*5-30);
+        gi.drawString("Press SPACE",30*2+28,30*5+7);
 
 
     }
