@@ -17,6 +17,10 @@ public class Seb extends Characters.Thing {
     public int shots;
     public int currentStress;
     private int maxStress;
+    public int interviews;
+    public int spidersKilled;
+    public int popQuizScore;
+    public int score;
 
     public Seb(int x, int y)
     {
@@ -28,6 +32,15 @@ public class Seb extends Characters.Thing {
         textbook = false;
         isSolid = true;
         image = new ImageIcon("src/Characters/resources/seb.gif").getImage();
+        score = 0;
+        interviews = 0;
+        popQuizScore = 0;
+        spidersKilled = 0;
+    }
+
+    public void getFinalScore()
+    {
+        this.score = (interviews + spidersKilled + popQuizScore - currentStress);
     }
 
 }
