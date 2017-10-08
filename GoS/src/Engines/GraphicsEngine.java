@@ -85,7 +85,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
         GS.seb.draw(gi);
         if(GS.stressBar) {
             gi.setColor(Color.green);
-            gi.fillRect(7 * 16 + 3, 28 * 16, GS.seb.currentStress, 16);
+            gi.fillRect(7 * 16 + 3, 28 * 16, (int)(234 * ((double)GS.seb.currentStress /(double) GS.seb.maxStress)), 16);
             gi.drawImage(stressBar, 7 * 16, 28 * 16, 240, 16, null);
         }
         // JUST SCALE THE BUFFERED IMAGE DRAW

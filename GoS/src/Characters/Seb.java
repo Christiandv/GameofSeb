@@ -21,7 +21,7 @@ public class Seb extends Characters.Thing {
     public boolean raid;
     public int shots;
     public int currentStress;
-    private int maxStress;
+    public int maxStress;
     public int interviews;
     public int spidersKilled;
     public int popQuizScore;
