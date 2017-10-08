@@ -19,8 +19,6 @@ public class SebimonFight extends Level {
     int spiderHp = 100;
     ArrayList<String> menu = new ArrayList<String>();
 
-
-
     @Override
     public boolean receiveInput(KeyEvent e) {
         counter++;
