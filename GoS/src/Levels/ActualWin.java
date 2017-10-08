@@ -28,7 +28,7 @@ public class ActualWin extends Level
         stressBar = false;
         objects = new Characters.Thing[30][30];
         seb = new Seb(20, 20);
-
+        seb.isVisable = false;
 //        for (int i = 0; i < 30; i++) {
 //            for (int j = 0; j < 30; j++) {
 //                objects[i][j] = new Seb(i,j);
