@@ -17,19 +17,24 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import javax.swing.*;
+import javax.swing.Timer;
 
-public class GraphicsEngine extends JPanel {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class GraphicsEngine extends JPanel implements ActionListener{
     ArrayList<Level> levels = new ArrayList<Level>();
     int currentLevel = 0;
 
     BufferedImage bi;
     Graphics gi;
-    private boolean ingame;
+    //private boolean ingame;
     private int WIDTH;
     private int HEIGHT;
     private final int DELAY = 30;
     private int scroll = 0;
     GameState GS ;
+    Timer timer;
+
     public GraphicsEngine(int width, int height) {
         levels.add(new Level1());
         levels.add(new Level2());
@@ -41,12 +46,14 @@ public class GraphicsEngine extends JPanel {
         gi = bi.createGraphics();
         setFocusable(true);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        timer = new Timer(60, this);
+        timer.start();
     }
 
-    public void repaint(GameState GS){
-        this.GS = GS;
-        repaint();
-    }
+//    public void repaint(GameState GS){
+//        this.GS = GS;
+//        repaint();
+//    }
 
     // main draw
     @Override
@@ -96,8 +103,13 @@ public class GraphicsEngine extends JPanel {
             this.currentLevel++;
             GS = levels.get(currentLevel).getGameState();
         }
-        repaint(GS);
+       // repaint(GS);
         repaint();
     }
 
+    // update function
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        repaint();
+    }
 }
