@@ -36,6 +36,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
     Timer timer;
     Image stressBar;
 
+
     public GraphicsEngine(int width, int height) {
         levels.add(new End());
         levels.add(new Opening());
