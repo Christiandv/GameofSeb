@@ -15,9 +15,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-public class GraphicsEngine extends JPanel  {
+public class GraphicsEngine extends JLabel {
     ArrayList<Level> levels = new ArrayList<Level>();
     int currentLevel = 0;
 
