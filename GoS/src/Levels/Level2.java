@@ -429,9 +429,6 @@ public class Level2 extends Level {
             }
         }
 
-        //if(seb.x == 15 && seb.y == 30){
-        //  nextLevel = true;
-        //}
         objects = after;
         if (objects[seb.x][seb.y] != null) {
             if (objects[seb.x][seb.y] instanceof Teacher) {
@@ -444,6 +441,9 @@ public class Level2 extends Level {
                     seb.addStress(10);
                 }
             }
+        }
+        if(seb.x == 0 && seb.y >=29 || 14<= seb.x && seb.x >= 16 && seb.y >= 29 ){
+            nextLevel = true;
         }
         //System.out.println(seb.currentStress);
         return getGameState();
