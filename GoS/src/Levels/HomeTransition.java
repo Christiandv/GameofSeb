@@ -38,8 +38,8 @@ public class HomeTransition extends Level
         Font font = new Font("Helvetica", Font.BOLD, 12);
         gi.setFont(font);
         gi.setColor(Color.BLACK);
-        gi.drawString("After classes,",30*2-20,30*3+20);
-        gi.drawString("Seb heads home.",30*2-20,30*3+20);
+        gi.drawString("   After classes,",30*2+20,30*3+20);
+        gi.drawString("Seb heads home.",30*2+20,30*3+32);
         gi.drawString("Press SPACE to continue",30*2,30*5-10);
 
     }

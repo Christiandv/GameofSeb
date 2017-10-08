@@ -5,6 +5,7 @@ import Characters.Seb;
 import Characters.Spider;
 import Engines.GameState;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
@@ -15,16 +16,17 @@ import java.awt.image.BufferedImage;
 public class Winning extends Level
 {
     int counter = 0;
+    Image border = (new ImageIcon(this.getClass().getResource("backgrounds/fancy frame.png"))).getImage();
     @Override
     public boolean receiveInput(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE)
         {
             counter++;
             if( counter ==1){
-                objects[10][20] = new Spider(10, 10);
+                objects[10][12] = new Spider(10, 10);
                 Graphics gi = background.getGraphics();
                 gi.setColor(Color.red);
-                gi.drawString("Except for the Spiders",30*2+6,30*3+40);
+                gi.drawString("If it weren't for the spiders",30*2,30*3);
             }else{
                 nextLevel = true;
             }
@@ -41,14 +43,16 @@ public class Winning extends Level
 
         seb.isVisable = false;
 
-        background = new BufferedImage(16*16, 16*16, BufferedImage.TYPE_INT_RGB);
+        background = new BufferedImage(16 * 16, 16*16, BufferedImage.TYPE_INT_RGB);
         Graphics gi = background.getGraphics();
-        gi.setColor(Color.gray);
-        gi.fillRect(0,0,16*16,16*16);
+        gi.drawImage(border,0,0,16*16,16*16,null);
+        gi.setColor(Color.BLACK);
+        Font font = new Font("Helvetica", Font.BOLD, 12);
+        gi.setFont(font);
         gi.setColor(Color.black);
-        gi.drawString("Finally home, Seb can rest.",30*2-10,30*3+20);
-        gi.drawString("Score: " + seb.getFinalScore(),30*2+40,30*5-6);
-        gi.drawString("Press SPACE to restart",30*2,30*5+10);
+        gi.drawString("Finally home, Seb can rest.",30*2-6,30*3+20);
+        gi.drawString("Score: " + seb.getFinalScore(),30*2+46,30*5-6);
+        gi.drawString("Press SPACE to restart",30*2+6,30*5+10);
 
     }
 
