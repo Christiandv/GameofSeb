@@ -1,5 +1,6 @@
 package Levels;
 
+import Characters.InvisibleWall;
 import Characters.Seb;
 import Characters.Thing;
 import Engines.GameState;
@@ -69,14 +70,16 @@ public class Level1 extends Level {
     public Level1() {
         objects = new Characters.Thing[30][30];
         seb = new Seb(6, 6);
-        objects[2][2] = new Thing(2, 2);
+        objects[2][2] = new Thing(2, 2,1,2);
         objects[2][2].isSolid = true;
-        objects[2][2].loadImage("src/Characters/resources/seb.gif");
+        objects[2][2].loadImage("src/Characters/resources/rit nerd.gif");
+        objects[2][3] = new InvisibleWall(2,3);
 
     }
 
     @Override
     public GameState takeTurn() {
+
         return getGameState();
     }
 }

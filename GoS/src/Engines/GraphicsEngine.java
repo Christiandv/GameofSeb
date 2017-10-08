@@ -60,7 +60,7 @@ public class GraphicsEngine extends JPanel  {
         //g.drawImage(img, x,y,width, height, null);
 
         for(Thing t: GS.things){
-            gi.drawRect(t.x*16,t.y*16,16,16);
+            
             t.draw(gi);
         }
         GS.seb.draw(gi);
