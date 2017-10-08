@@ -11,53 +11,59 @@ public class Level1 extends Level {
     @Override
     public boolean receiveInput(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            if(seb.y>0) {
+            if (seb.y > 0) {
                 Thing t = objects[seb.x][seb.y - 1];
                 if (t == null) {
                     seb.y--;
+                    return true;
                 }
                 if (t != null)
                     if (!t.isSolid) {
                         seb.y--;
+                        return true;
                     }
             }
-        }else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            if(seb.y<objects[0].length-1) {
+        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            if (seb.y < objects[0].length - 1) {
                 Thing t = objects[seb.x][seb.y + 1];
                 if (t == null) {
                     seb.y++;
+                    return true;
                 }
                 if (t != null)
                     if (!t.isSolid) {
                         seb.y++;
+                        return true;
                     }
             }
-        }else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            if(seb.x>0) {
+        } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            if (seb.x > 0) {
                 Thing t = objects[seb.x - 1][seb.y];
                 if (t == null) {
                     seb.x--;
+                    return true;
                 }
                 if (t != null)
                     if (!t.isSolid) {
                         seb.x--;
+                        return true;
                     }
             }
-        }else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            if(seb.x<objects.length-1) {
+        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            if (seb.x < objects.length - 1) {
                 Thing t = objects[seb.x + 1][seb.y];
                 if (t == null) {
                     seb.x++;
+                    return true;
                 }
                 if (t != null)
                     if (!t.isSolid) {
                         seb.x++;
+                        return true;
                     }
             }
         }
-
-
-            return true;
+        return false;
     }
 
     public Level1() {
