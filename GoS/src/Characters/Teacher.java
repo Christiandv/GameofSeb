@@ -11,6 +11,13 @@ public class Teacher extends Thing
     {
         super(1,1);
         isSolid = true;
-        image = (new ImageIcon(this.getClass().getResource("resources/teacher.gif"))).getImage();
+        double i = Math.random();
+        if(i < .33) {
+            image = (new ImageIcon(this.getClass().getResource("resources/teacher.gif"))).getImage();
+        } else if (i <.5){
+            image = (new ImageIcon(this.getClass().getResource("resources/girl.gif"))).getImage();
+        }else{
+            image = (new ImageIcon(this.getClass().getResource("resources/rit nerd.gif"))).getImage();
+        }
     }
 }
