@@ -55,4 +55,8 @@ public class Seb extends Characters.Thing {
         this.score = (interviews + spidersKilled + popQuizScore - currentStress);
     }
 
+    public int addStress (int increment){
+        return currentStress += increment;
+    }
+
 }

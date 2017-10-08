@@ -1,9 +1,6 @@
 package Levels;
 
-import Characters.Bus;
-import Characters.InvisibleWall;
-import Characters.Seb;
-import Characters.Thing;
+import Characters.*;
 import Engines.GameState;
 
 import javax.swing.*;
@@ -73,8 +70,7 @@ public class Level1 extends Level {
         objects = new Characters.Thing[30][30];
         seb = new Seb(2, 22);
         objects[2][2] = new Bus(7,4);
-        objects[2][2].isSolid = true;
-        objects[2][2].loadImage("resources/rts bus.png");
+        objects[5][29] = new StressBar();
         //objects[2][3] = new InvisibleWall(2,3);
         background = new ImageIcon(this.getClass().getResource("backgrounds/street.png")).getImage();
 
@@ -82,6 +78,7 @@ public class Level1 extends Level {
 
     @Override
     public GameState takeTurn() {
+        seb.addStress(1);
         Thing[][] after = new Thing[30][30];
         if(seb.x >= 29 && 3 <= seb.y && seb.y >= 4 ){
             nextLevel = true;
