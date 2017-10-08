@@ -45,6 +45,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
         levels.add(new Level2());
         levels.add(new HomeTransition());
         levels.add(new Level3());
+        levels.add(new Winning());
         GS = levels.get(currentLevel).getGameState();
         WIDTH = width;
         addKeyListener(new TAdapter());
@@ -120,6 +121,11 @@ public class GraphicsEngine extends JPanel implements ActionListener{
             if (stress == 100)
             {
                 this.currentLevel = 0;
+                GS = levels.get(currentLevel).getGameState();
+            }
+            else if (currentLevel == 7)
+            {
+                this.currentLevel = 1;
                 GS = levels.get(currentLevel).getGameState();
             }
             else
