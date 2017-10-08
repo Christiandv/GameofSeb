@@ -3,8 +3,7 @@ package Characters;
 /**
  * Created by Caitlin on 10/7/2017.
  */
-package GoS.src.Characters;
-public class Seb extends Thing{
+public class Seb extends Characters.Thing {
     //our hero
 
     /**

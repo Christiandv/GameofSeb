@@ -1,3 +1,7 @@
+package Levels;
+import Characters.Thing;
+import Engines.GameState;
+
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 

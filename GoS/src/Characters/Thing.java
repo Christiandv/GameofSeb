@@ -1,9 +1,9 @@
 
-
+package Characters;
 import java.awt.Image;
 import java.awt.Rectangle;
 import javax.swing.ImageIcon;
-package GoS.src.Characters;
+
 public class Thing {
 
 

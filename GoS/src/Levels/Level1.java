@@ -1,3 +1,6 @@
+package Levels;
+import Engines.GameState;
+
 import java.awt.event.KeyEvent;
 
 public class Level1 extends Level {
@@ -7,7 +10,7 @@ public class Level1 extends Level {
     }
 
     public Level1(){
-        objects = new Thing[30][30];
+        objects = new Characters.Thing[30][30];
     }
 
     @Override
