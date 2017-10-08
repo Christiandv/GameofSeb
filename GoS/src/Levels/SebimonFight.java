@@ -23,29 +23,24 @@ public class SebimonFight extends Level {
     @Override
     public boolean receiveInput(KeyEvent e) {
         counter++;
-        if (counter == 1) {
-            background = new BufferedImage(16 * 16, 16 * 16, BufferedImage.TYPE_INT_RGB);
-            Graphics gi = background.getGraphics();
-            gi.setColor(Color.gray);
-            gi.fillRect(0, 0, 16 * 16, 16 * 16);
-            gi.setColor(Color.BLACK);
-            gi.drawString("A wild Spider appeared!", 30 * 2 - 20, 30 * 3 + 20);
-            menu.add("1.Stress Ball");
-            menu.add("2.Eloquent Response");
-            menu.add("3.Raid");
-            menu.add("4.Run");
-        }
 
-        else if (counter == 2) {
+        if (counter == 1) {
             Graphics gi = background.getGraphics();
             gi.setColor(Color.gray);
             gi.fillRect(0, 0, 16 * 16, 16 * 16);
-            objects[4][20] = new BackwardsSeb(16,16);
+            objects[4][13] = new BackwardsSeb(16,16);
             objects[15][4] = new Spider(16,16);
             counter++;
+            gi.setColor(Color.white);
+            gi.fillRect(0,200, 16 * 16, 16 * 4);
+            gi.setColor(Color.black);
+            gi.drawString("1.Stress Ball", 25, 210);
+            gi.drawString("2.Eloquent Response", 100, 210 );
+            gi.drawString("3.Raid", 25, 245);
+            gi.drawString("4.Run", 100, 245);
         }
 
-        else if (counter >= 3) {
+        else if (counter >= 2) {
             //rounds of combat
             Graphics gi = background.getGraphics();
             gi.setColor(Color.BLACK);
@@ -91,6 +86,17 @@ public class SebimonFight extends Level {
         objects = new Characters.Thing[30][30];
         seb = new Seb(10, 20);
         seb.isVisable = false;
+
+        background = new BufferedImage(16 * 16, 16 * 16, BufferedImage.TYPE_INT_RGB);
+        Graphics gi = background.getGraphics();
+        gi.setColor(Color.gray);
+        gi.fillRect(0, 0, 16 * 16, 16 * 16);
+        gi.setColor(Color.BLACK);
+        gi.drawString("A wild Spider appeared!", 30 * 2 - 20, 30 * 3 + 20);
+        menu.add("1.Stress Ball");
+        menu.add("2.Eloquent Response");
+        menu.add("3.Raid");
+        menu.add("4.Run");
     }
 
     @Override
