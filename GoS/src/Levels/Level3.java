@@ -80,7 +80,7 @@ public class Level3 extends Level {
 
     public Level3(){
         objects = new Characters.Thing[30][30];
-        seb = new Seb(4, 2);
+        seb = new Seb(4, 29);
         stressBar = true;
 
         //outside wall
@@ -144,6 +144,20 @@ public class Level3 extends Level {
         objects[28][12] = new InvisibleWall();
         objects[29][12] = new InvisibleWall();
 
+        //neighbor wall
+        objects[18][22] = new InvisibleWall();
+        objects[19][22] = new InvisibleWall();
+        objects[20][22] = new InvisibleWall();
+        objects[21][22] = new InvisibleWall();
+        objects[22][22] = new InvisibleWall();
+        objects[23][22] = new InvisibleWall();
+        objects[24][22] = new InvisibleWall();
+        objects[25][22] = new InvisibleWall();
+        objects[26][22] = new InvisibleWall();
+        objects[27][22] = new InvisibleWall();
+        objects[28][22] = new InvisibleWall();
+        objects[29][22] = new InvisibleWall();
+
 
 
 
@@ -152,6 +166,12 @@ public class Level3 extends Level {
 
     @Override
     public GameState takeTurn(){
+
+        if(seb.y < 12 && seb.x >= 23 && seb.x <= 25 ){
+            nextLevel = true;
+        }
+
+
         return getGameState();
     }
 }
