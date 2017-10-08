@@ -33,9 +33,9 @@ public class WalkToClass extends Level
         gi.setColor(Color.white);
         gi.fillRect(0,0,30*8,30*8);
         gi.setColor(Color.BLACK);
-        gi.drawString("Seb has missed the bus,",30*2-20,30*3+20);
+        gi.drawString("Seb has missed the bus,",30*2-10,30*3+20);
         gi.drawString("and walks the rest of the way to campus.",30*2-50,30*5-20);
-        gi.drawString("Press SPACE to continue to class",30*2-40,30*5+10);
+        gi.drawString("Press SPACE to continue to class",30*2-30,30*5+10);
 
     }
 
