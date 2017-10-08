@@ -11,6 +11,6 @@ public class Fireball extends Thing
     {
         super(x, y);
         isSolid = true;
-        image = (new ImageIcon(this.getClass().getResource("resources/ghost.gif"))).getImage();
+        image = (new ImageIcon(this.getClass().getResource("resources/fireball.gif"))).getImage();
     }
 }
