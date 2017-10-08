@@ -21,6 +21,7 @@ public class HomeTransition extends Level
         }
         return false;
     }
+
     public HomeTransition()
     {
         stressBar = false;
@@ -40,8 +41,6 @@ public class HomeTransition extends Level
 
     @Override
     public GameState takeTurn() {
-
-
         return getGameState();
     }
 }
