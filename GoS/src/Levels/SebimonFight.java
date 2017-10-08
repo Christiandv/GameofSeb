@@ -1,8 +1,11 @@
 package Levels;
 
+import Characters.BackwardsSeb;
 import Characters.Seb;
+import Characters.Spider;
 import Engines.GameState;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
@@ -14,13 +17,14 @@ public class SebimonFight extends Level {
     int counter = 0;
     int spiderHp = 100;
 
+
     @Override
     public boolean receiveInput(KeyEvent e) {
         counter++;
         if (counter == 1) {
             background = new BufferedImage(16 * 16, 16 * 16, BufferedImage.TYPE_INT_RGB);
             Graphics gi = background.getGraphics();
-            gi.setColor(Color.white);
+            gi.setColor(Color.gray);
             gi.fillRect(0, 0, 16 * 16, 16 * 16);
             gi.setColor(Color.BLACK);
             gi.drawString("A wild Spider appeared!", 30 * 2 - 20, 30 * 3 + 20);
@@ -28,7 +32,11 @@ public class SebimonFight extends Level {
         }
 
         else if (counter == 2) {
-            // add images entering on screen here
+            Graphics gi = background.getGraphics();
+            gi.setColor(Color.gray);
+            gi.fillRect(0, 0, 16 * 16, 16 * 16);
+            objects[4][20] = new BackwardsSeb(16,16);
+            objects[15][4] = new Spider(16,16);
             counter++;
         }
 

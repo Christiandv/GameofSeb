@@ -14,5 +14,7 @@ public class Spider extends Thing
         super(x, y);
         image = (new ImageIcon(this.getClass().getResource("resources/spider.gif"))).getImage();
         isSolid = false;
+        height = 10;
+        width = 10;
     }
 }

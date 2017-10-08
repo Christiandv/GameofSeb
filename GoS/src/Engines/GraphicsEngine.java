@@ -46,6 +46,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
         levels.add(new HomeTransition());
         levels.add(new Level3());
         levels.add(new Winning());
+        levels.add(new SebimonFight());
         GS = levels.get(currentLevel).getGameState();
         WIDTH = width;
         addKeyListener(new TAdapter());
@@ -127,7 +128,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
                 this.currentLevel = 0;
                 GS = levels.get(currentLevel).getGameState();
             }
-            else if (currentLevel == 7)
+            else if (currentLevel == 8)
             {
                 this.currentLevel = 1;
                 GS = levels.get(currentLevel).getGameState();
