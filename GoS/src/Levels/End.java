@@ -35,9 +35,9 @@ public class End extends Level
         gi.setColor(Color.black);
         gi.fillRect(0,0,16*16,16*16);
         gi.setColor(Color.white);
-        gi.drawString("the stress has overtaken poor Seb",30*2-22,30*3+20);
-        gi.drawString("the final score is: " + seb.getFinalScore(),30*2,30*5-20);
-        gi.drawString("Press SPACE to restart",30*2-10,30*5+10);
+        gi.drawString("The stress has overtaken poor Seb.",30*2-30,30*3+20);
+        gi.drawString("The final score is: " + seb.getFinalScore(),30*2+16,30*5-20);
+        gi.drawString("Press SPACE to restart",30*2,30*5+10);
 
     }
 
