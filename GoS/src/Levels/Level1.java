@@ -70,7 +70,7 @@ public class Level1 extends Level {
     public Level1() {
         objects = new Characters.Thing[30][30];
         seb = new Seb(6, 6);
-        objects[2][2] = new Thing(1,2);
+        objects[2][2] = new Thing(10,4);
         objects[2][2].isSolid = true;
         objects[2][2].loadImage("resources/rts bus.png");
         //objects[2][3] = new InvisibleWall(2,3);
