@@ -9,7 +9,7 @@ public class Teacher extends Thing
 {
     public Teacher(int x, int y)
     {
-        super(x, y);
+        super(x, y,1,1);
         isSolid = true;
     }
 }

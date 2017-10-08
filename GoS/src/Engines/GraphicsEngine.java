@@ -4,6 +4,7 @@ package Engines;
 import Characters.Thing;
 import Levels.Level;
 import Levels.Level1;
+import Levels.Level2;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -28,11 +29,10 @@ public class GraphicsEngine extends JPanel {
     private int HEIGHT;
     private final int DELAY = 30;
     private int scroll = 0;
-    GameState GS;
-
+    GameState GS ;
     public GraphicsEngine(int width, int height) {
         levels.add(new Level1());
-
+        levels.add(new Level2());
         GS = levels.get(currentLevel).getGameState();
         WIDTH = width;
         addKeyListener(new TAdapter());
@@ -41,14 +41,12 @@ public class GraphicsEngine extends JPanel {
         gi = bi.createGraphics();
         setFocusable(true);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
-
     }
 
-    public void repaint(GameState GS) {
+    public void repaint(GameState GS){
         this.GS = GS;
         repaint();
     }
-
     // main draw
     @Override
     public void paintComponent(Graphics g) {
@@ -80,21 +78,23 @@ public class GraphicsEngine extends JPanel {
         @Override
         public void keyReleased(KeyEvent e) {
         }
-
         @Override
         public void keyPressed(KeyEvent e) {
 
-            if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
                 System.exit(0);
             }
-            if (levels.get(currentLevel).receiveInput(e))
+            if(levels.get(currentLevel).receiveInput(e))
                 turn();
         }
     }
-
-    public void turn() {
-        levels.get(currentLevel).takeTurn();
-        repaint(levels.get(currentLevel).getGameState());
+    public void turn(){
+        GS=levels.get(currentLevel).takeTurn();
+        if(GS.nextLevel == true){
+            this.currentLevel++;
+            GS = levels.get(currentLevel).getGameState();
+        }
+        repaint(GS);
         repaint();
     }
 

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public abstract class Level {
     Thing[][] objects;
     Seb seb;
+    boolean nextLevel = false;
 
 
     // handle key presses. return true if a turn should be taken.
@@ -23,7 +24,7 @@ public abstract class Level {
 
 
         // do other things
-        return new GameState(objects,seb);
+        return new GameState(objects,seb, nextLevel);
     }
 
 }
