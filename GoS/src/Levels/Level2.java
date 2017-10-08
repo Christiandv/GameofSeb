@@ -88,7 +88,7 @@ public class Level2 extends Level {
 
     @Override
     public GameState takeTurn() {
-        Thing T1= objects[1][1];
+       /* Thing T1= objects[1][1];
         Thing T2 = objects[1][2];
         Thing T3 = objects[1][3];
         Thing T4 = objects[2][1];
@@ -107,6 +107,7 @@ public class Level2 extends Level {
         //if(seb.x == 15 && seb.y == 30){
           //  nextLevel = true;
         //}
+        */
         return getGameState();
     }
 

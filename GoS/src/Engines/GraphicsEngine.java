@@ -47,6 +47,7 @@ public class GraphicsEngine extends JPanel {
         this.GS = GS;
         repaint();
     }
+
     // main draw
     @Override
     public void paintComponent(Graphics g) {
@@ -69,7 +70,7 @@ public class GraphicsEngine extends JPanel {
         }
         GS.seb.draw(gi);
         // JUST SCALE THE BUFFERED IMAGE DRAW
-        g.drawImage(bi, 0, 0, WIDTH, HEIGHT, this);
+        g.drawImage(bi, 0, 0, HEIGHT, HEIGHT, this);
     }
 
     // takes keyboard inputs
@@ -78,6 +79,7 @@ public class GraphicsEngine extends JPanel {
         @Override
         public void keyReleased(KeyEvent e) {
         }
+
         @Override
         public void keyPressed(KeyEvent e) {
 
