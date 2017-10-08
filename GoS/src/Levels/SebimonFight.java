@@ -31,10 +31,10 @@ public class SebimonFight extends Level {
             gi.fillRect(0, 0, 16 * 16, 16 * 16);
             gi.setColor(Color.BLACK);
             gi.drawString("A wild Spider appeared!", 30 * 2 - 20, 30 * 3 + 20);
-            menu.add("Stress Ball");
-            menu.add("Eloquent Response");
-            menu.add("Raid");
-            menu.add("Run");
+            menu.add("1.Stress Ball");
+            menu.add("2.Eloquent Response");
+            menu.add("3.Raid");
+            menu.add("4.Run");
         }
 
         else if (counter == 2) {
@@ -48,6 +48,22 @@ public class SebimonFight extends Level {
 
         else if (counter >= 3) {
             //rounds of combat
+            if (e.getKeyChar() == '1')
+            {
+
+            }
+            else if (e.getKeyChar() == '2')
+            {
+
+            }
+            else if (e.getKeyChar() == '3')
+            {
+
+            }
+            else
+            {
+
+            }
 
             counter++;
         }
