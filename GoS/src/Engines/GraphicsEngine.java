@@ -5,6 +5,7 @@ import Characters.Thing;
 import Levels.Level;
 import Levels.Level1;
 import Levels.Level2;
+import Levels.Opening;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -39,6 +40,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
     Image stressBar;
 
     public GraphicsEngine(int width, int height) {
+        levels.add(new Opening());
         levels.add(new Level1());
         levels.add(new Level2());
         GS = levels.get(currentLevel).getGameState();
