@@ -7,9 +7,10 @@ import javax.swing.*;
  */
 public class Teacher extends Thing
 {
-    public Teacher(int x, int y)
+    public Teacher()
     {
         super(1,1);
         isSolid = true;
+        image = (new ImageIcon(this.getClass().getResource("resources/seb.gif"))).getImage();
     }
 }

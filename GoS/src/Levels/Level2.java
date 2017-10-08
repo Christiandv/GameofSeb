@@ -80,34 +80,56 @@ public class Level2 extends Level {
     public Level2(){
         objects = new Characters.Thing[30][30];
         seb = new Seb(4,2);
-        objects[1][1] = new Teacher(6,10);
-        objects[1][2] = new Teacher(20,15);
-        objects[1][3] = new Teacher(15,4);
-        objects[2][1] = new Teacher(16,20);
+        objects[6][10] = new Teacher();
+        objects[20][15] = new Teacher();
+        objects[15][4] = new Teacher();
+        objects[16][20] = new Teacher();
     }
 
     @Override
     public GameState takeTurn() {
-       /* Thing T1= objects[1][1];
-        Thing T2 = objects[1][2];
-        Thing T3 = objects[1][3];
-        Thing T4 = objects[2][1];
-        if(turnNum%2 == 0){
-            T1.x++;
-            T2.y++;
-            T3.x++;
-            T4.y++;
+        Thing[][] after = new Thing[30][30];
+        //move a teacher depending on the turnNum and the random number. Move the teacher
+        //into the "after" array. set object array to after array. start again
+        for(int i = 0; i < after.length; i++){
+            for(int j = 0; j < after[0].length; j++){
+                if(objects[i][j] != null){
+                    if(objects[i][j] instanceof Teacher){
+                        System.out.println();
+                        Teacher T = (Teacher)objects[i][j];
+                        if(turnNum%2 ==0){
+                            double r = Math.random();
+                            if(r<= .5){
+                                if(i+1 <= 29) {
+                                    after[i + 1][j] = T;
+                                }
+                            }else{
+                                if(j+1 <=29) {
+                                    after[i][j + 1] = T;
+                                }
+                            }
+                        }else{
+                            double r = Math.random();
+                            if(r<= .5){
+                                if(i-1 >= 0){
+                                    after[i-1][j] = T;
+                                }
+                            }else{
+                                if(j-1 >= 0) {
+                                    after[i][j - 1] = T;
+                                }
+                            }
+                        }
+                    }
 
-        }else{
-            T1.x--;
-            T2.y--;
-            T3.x--;
-            T4.y--;
+                }
+            }
         }
+
         //if(seb.x == 15 && seb.y == 30){
           //  nextLevel = true;
         //}
-        */
+        objects = after;
         return getGameState();
     }
 
