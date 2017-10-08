@@ -11,6 +11,6 @@ public class Bus extends Thing
     {
         super(x, y);
         isSolid = true;
-        image = new ImageIcon("src/Characters/resources/rts bus.png").getImage();
+        image = (new ImageIcon(this.getClass().getResource("resources/seb.gif"))).getImage();
     }
 }

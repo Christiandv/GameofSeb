@@ -36,6 +36,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
     private int scroll = 0;
     GameState GS ;
     Timer timer;
+    Image stressBar;
 
     public GraphicsEngine(int width, int height) {
         levels.add(new Level1());
@@ -48,6 +49,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
         gi = bi.createGraphics();
         setFocusable(true);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        stressBar = (new ImageIcon(this.getClass().getResource("/Characters/resources/stressbar.png"))).getImage();
         timer = new Timer(60, this);
         timer.start();
     }
@@ -79,6 +81,9 @@ public class GraphicsEngine extends JPanel implements ActionListener{
             }
         }
         GS.seb.draw(gi);
+        gi.setColor(Color.green);
+        gi.fillRect(7*16+3, 28*16, GS.seb.currentStress, 16);
+        gi.drawImage(stressBar, 7*16, 28*16, 240, 16, null);
         // JUST SCALE THE BUFFERED IMAGE DRAW
         g.drawImage(bi, 0, 0, HEIGHT, HEIGHT, this);
     }
@@ -103,8 +108,10 @@ public class GraphicsEngine extends JPanel implements ActionListener{
     public void turn(){
         GS=levels.get(currentLevel).takeTurn();
         if(GS.nextLevel == true){
+            int stress = GS.seb.currentStress;
             this.currentLevel++;
             GS = levels.get(currentLevel).getGameState();
+            GS.seb.currentStress = stress;
         }
        // repaint(GS);
         repaint();

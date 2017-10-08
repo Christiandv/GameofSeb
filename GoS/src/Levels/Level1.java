@@ -70,7 +70,6 @@ public class Level1 extends Level {
         objects = new Characters.Thing[30][30];
         seb = new Seb(2, 22);
         objects[2][2] = new Bus(7,4);
-        objects[5][29] = new StressBar();
         //objects[2][3] = new InvisibleWall(2,3);
         background = new ImageIcon(this.getClass().getResource("backgrounds/street.png")).getImage();
 
@@ -92,6 +91,12 @@ public class Level1 extends Level {
                         //System.out.println("kllk   " + i);
                         if(i+1 <=29){
                             after[i+1][j] = bus;
+                            if(i - seb.x > 5){
+                                seb.addStress(2); //have some more stress, bus is getting away
+                            }
+                            else{
+                                seb.addStress(0); //no stress he is chasing bus
+                            }
                         }else{
                             bus.isVisable = false;
                         }

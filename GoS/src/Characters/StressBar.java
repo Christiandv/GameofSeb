@@ -11,7 +11,7 @@ public class StressBar extends Thing
 {
     public StressBar()
     {
-        super(160,16);
+        super(16,1);
         isSolid = false;
         image = (new ImageIcon(this.getClass().getResource("resources/stressbar.png"))).getImage();
     }
