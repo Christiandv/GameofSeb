@@ -6,6 +6,7 @@ import Engines.GameState;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 /**
  * Created by joseffentonlenz on 10/8/17.
@@ -13,6 +14,8 @@ import java.awt.image.BufferedImage;
 public class SebimonFight extends Level {
     int counter = 0;
     int spiderHp = 100;
+    ArrayList<String> menu = new ArrayList<String>();
+
 
     @Override
     public boolean receiveInput(KeyEvent e) {
@@ -24,7 +27,10 @@ public class SebimonFight extends Level {
             gi.fillRect(0, 0, 16 * 16, 16 * 16);
             gi.setColor(Color.BLACK);
             gi.drawString("A wild Spider appeared!", 30 * 2 - 20, 30 * 3 + 20);
-
+            menu.add("Stress Ball");
+            menu.add("Eloquent Response");
+            menu.add("Raid");
+            menu.add("Run");
         }
 
         else if (counter == 2) {
@@ -34,6 +40,7 @@ public class SebimonFight extends Level {
 
         else if (counter >= 3) {
             //rounds of combat
+
             counter++;
         }
 
