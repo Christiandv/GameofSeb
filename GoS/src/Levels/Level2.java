@@ -163,11 +163,11 @@ public class Level2 extends Level {
                 seb.addStress(10);
             }
         }
-        if(objects[seb.x+1][seb.y] != null || objects[seb.x-1][seb.y] != null || objects[seb.x][seb.y+1] != null
-                || objects[seb.x][seb.y-1] != null){
-            if(objects[seb.x+1][seb.y] instanceof Teacher || objects[seb.x-1][seb.y] instanceof Teacher
-                    || objects[seb.x][seb.y+1] instanceof Teacher|| objects[seb.x][seb.y-1] instanceof Teacher){
-                seb.addStress(10);
+        for( int i = seb.x-1; i<= seb.x+1 && i>=0 && i <30; i ++){
+            for( int j = seb.y-1; j <= seb.y+1 && j >=0 && j < 30; j++){
+                if( objects[i][j] instanceof Teacher){
+                    seb.addStress(10);
+                }
             }
         }
         System.out.println(seb.currentStress);
