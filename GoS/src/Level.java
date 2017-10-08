@@ -1,19 +1,20 @@
+import java.util.ArrayList;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+public abstract class Level {
+    Thing[][] objects;
 
-public class Level  {
+    public abstract GameState takeTurn();
 
-
-
-    public Level(){
-
+    public GameState getGameState() {
+        ArrayList<Thing> things = new ArrayList<Thing>();
+        for (int i = 0; i < objects.length; i++) {
+            for (int j = 0; j < objects[0].length; j++) {
+                things.add(objects[i][j]);
+            }
+        }
+        // do other things
+        return new GameState(things);
     }
-
-
-    public void takeTurn(){
-
-    }
-
 
 }
+

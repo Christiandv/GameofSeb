@@ -1,11 +1,12 @@
 import java.awt.EventQueue;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import javax.swing.*;
 
 
 public class Game extends JFrame {
-    Level level1 = new Level();
+    ArrayList<Level> levels = new ArrayList<Level>();
 
     private Game() {
 
