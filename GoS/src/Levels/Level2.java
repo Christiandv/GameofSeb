@@ -103,6 +103,37 @@ public class Level2 extends Level {
         objects[20][15] = new Teacher();
         objects[15][4] = new Teacher();
         objects[16][20] = new Teacher();
+        objects[2][22] = new Teacher();
+        objects[19][26] = new Teacher();
+        //block the inifity with invisible walls
+        objects[15][15] = new InvisibleWall();
+        objects[14][14] = new InvisibleWall();
+        objects[15][14] = new InvisibleWall();
+        objects[16][14] = new InvisibleWall();
+        objects[15][13] = new InvisibleWall();
+        //block the buildings with invisible walls
+        //Gleason
+        objects[7][2] = new InvisibleWall();
+        objects[8][2] = new InvisibleWall();
+        objects[9][2] = new InvisibleWall();
+        objects[10][2] = new InvisibleWall();
+        objects[11][2] = new InvisibleWall();
+        //Booth
+        objects[29][3] = new InvisibleWall();
+        objects[29][4] = new InvisibleWall();
+        objects[29][5] = new InvisibleWall();
+        objects[29][6] = new InvisibleWall();
+        //Gosnell
+        objects[1][0] = new InvisibleWall();
+        objects[1][1] = new InvisibleWall();
+        objects[1][2] = new InvisibleWall();
+        objects[1][3] = new InvisibleWall();
+        objects[1][4] = new InvisibleWall();
+        objects[1][5] = new InvisibleWall();
+        objects[1][6] = new InvisibleWall();
+
+
+
 
         background = new ImageIcon(this.getClass().getResource("backgrounds/infinityQuad.gif")).getImage();
     }
@@ -170,8 +201,7 @@ public class Level2 extends Level {
                 }
             }
         }
-        System.out.println(seb.currentStress);
-        // do stress for seb being near a teacher here! just like above but check around seb
+        //System.out.println(seb.currentStress);
         return getGameState();
     }
 
