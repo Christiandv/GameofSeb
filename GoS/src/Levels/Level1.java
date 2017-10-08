@@ -11,12 +11,53 @@ public class Level1 extends Level {
     @Override
     public boolean receiveInput(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            if (objects[seb.x][seb.y - 1] != null)
-                if (!objects[seb.x][seb.y - 1].isSolid) {
+            if(seb.y>0) {
+                Thing t = objects[seb.x][seb.y - 1];
+                if (t == null) {
                     seb.y--;
                 }
+                if (t != null)
+                    if (!t.isSolid) {
+                        seb.y--;
+                    }
+            }
+        }else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            if(seb.y<objects[0].length-1) {
+                Thing t = objects[seb.x][seb.y + 1];
+                if (t == null) {
+                    seb.y++;
+                }
+                if (t != null)
+                    if (!t.isSolid) {
+                        seb.y++;
+                    }
+            }
+        }else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            if(seb.x>0) {
+                Thing t = objects[seb.x - 1][seb.y];
+                if (t == null) {
+                    seb.x--;
+                }
+                if (t != null)
+                    if (!t.isSolid) {
+                        seb.x--;
+                    }
+            }
+        }else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            if(seb.x<objects.length-1) {
+                Thing t = objects[seb.x + 1][seb.y];
+                if (t == null) {
+                    seb.x++;
+                }
+                if (t != null)
+                    if (!t.isSolid) {
+                        seb.x++;
+                    }
+            }
         }
-        return true;
+
+
+            return true;
     }
 
     public Level1() {

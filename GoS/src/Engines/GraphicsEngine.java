@@ -56,7 +56,7 @@ public class GraphicsEngine extends JPanel  {
     //  draws all of the things
     private void drawLevel(Graphics g) {
         gi.setColor(Color.white);
-        gi.fillRect(0,0,30*18,30*18);
+        gi.fillRect(0,0,30*16,30*16);
         //g.drawImage(img, x,y,width, height, null);
 
         for(Thing t: GS.things){
