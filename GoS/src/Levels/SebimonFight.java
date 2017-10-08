@@ -50,7 +50,7 @@ public class SebimonFight extends Level {
                 gi.fillRect(0,200, 16 * 16, 16 * 4);
                 gi.setColor(Color.black);
                 gi.drawString("Seb used Stress Ball!",25,225);
-                objects[5][21] = new Fireball(16, 16);
+                objects[10][5] = new Fireball(16, 16);
                 spiderHp = 0;
             }
             else if (e.getKeyChar() == '2')
@@ -68,6 +68,12 @@ public class SebimonFight extends Level {
                 gi.setColor(Color.black);
                 gi.drawString("Raid hasn't been programmed in!",25,225);
                 counter = 0;
+            }
+            else if (e.getKeyChar() == 'w')
+            {
+
+                nextLevel = true;
+                return true;
             }
             else
             {
