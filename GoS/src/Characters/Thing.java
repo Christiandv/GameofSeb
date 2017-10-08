@@ -38,8 +38,8 @@ public class Thing {
 
     public void draw(Graphics g,int x, int y){
         g.drawImage(image, x*16, y*16,width*16,height*16,null);
-        g.setColor(Color.black);
-        g.drawRect( x*16, y*16,width*16,height*16);
+       // g.setColor(Color.black);
+       // g.drawRect( x*16, y*16,width*16,height*16);
     }
 
     public Image getImage() {

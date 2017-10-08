@@ -41,6 +41,7 @@ public class GraphicsEngine extends JPanel {
         gi = bi.createGraphics();
         setFocusable(true);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
+
     }
 
     public void repaint(GameState GS) {
