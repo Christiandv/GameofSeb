@@ -23,7 +23,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class GraphicsEngine extends JPanel implements ActionListener{
     ArrayList<Level> levels = new ArrayList<Level>();
-    int currentLevel = 7;
+    int currentLevel = 5;
 
     BufferedImage bi;
     Graphics gi;
