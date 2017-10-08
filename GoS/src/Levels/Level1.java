@@ -88,7 +88,6 @@ public class Level1 extends Level {
                 if (objects[i][j] != null) {
                     if (objects[i][j] instanceof Bus) {
                         Bus bus = (Bus) objects[i][j];
-                        //System.out.println("kllk   " + i);
                         if(i+1 <=29){
                             after[i+1][j] = bus;
                             if(i - seb.x > 5){

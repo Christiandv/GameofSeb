@@ -27,6 +27,10 @@ public class Level2 extends Level {
                         seb.y--;
                         turnNum++;
                         return true;
+                    }else{
+                        if(t instanceof Teacher){
+                            seb.currentStress++;
+                        }
                     }
             }
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
@@ -42,6 +46,10 @@ public class Level2 extends Level {
                         seb.y++;
                         turnNum++;
                         return true;
+                    }else{
+                        if(t instanceof Teacher){
+                            seb.currentStress++;
+                        }
                     }
             }
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
@@ -57,6 +65,10 @@ public class Level2 extends Level {
                         seb.x--;
                         turnNum++;
                         return true;
+                    }else{
+                        if(t instanceof Teacher){
+                            seb.currentStress++;
+                        }
                     }
             }
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
@@ -72,6 +84,10 @@ public class Level2 extends Level {
                         seb.x++;
                         turnNum++;
                         return true;
+                    }else{
+                        if(t instanceof Teacher){
+                            seb.currentStress++;
+                        }
                     }
             }
         }
@@ -103,11 +119,16 @@ public class Level2 extends Level {
                             double r = Math.random();
                             if(r<= .5){
                                 if(i+1 <= 29) {
-                                    after[i + 1][j] = T;
+                                    after[i+1][j] = T;
+
+                                }else {
+                                    after[i][j] = T;
                                 }
                             }else{
                                 if(j+1 <=29) {
                                     after[i][j + 1] = T;
+                                }else {
+                                    after[i][j] = T;
                                 }
                             }
                         }else{
@@ -115,10 +136,14 @@ public class Level2 extends Level {
                             if(r<= .5){
                                 if(i-1 >= 0){
                                     after[i-1][j] = T;
+                                }else {
+                                    after[i][j] = T;
                                 }
                             }else{
                                 if(j-1 >= 0) {
                                     after[i][j - 1] = T;
+                                }else {
+                                    after[i][j] = T;
                                 }
                             }
                         }
@@ -131,6 +156,20 @@ public class Level2 extends Level {
           //  nextLevel = true;
         //}
         objects = after;
+        if(objects[seb.x][seb.y] != null){
+            if(objects[seb.x][seb.y] instanceof Teacher){
+                seb.currentStress++; //subject to change depending on scale
+            }
+        }
+        if(objects[seb.x+1][seb.y] != null || objects[seb.x-1][seb.y] != null || objects[seb.x][seb.y+1] != null
+                || objects[seb.x][seb.y-1] != null){
+            if(objects[seb.x+1][seb.y] instanceof Teacher || objects[seb.x-1][seb.y] instanceof Teacher
+                    || objects[seb.x][seb.y+1] instanceof Teacher|| objects[seb.x][seb.y-1] instanceof Teacher){
+                seb.currentStress++;
+            }
+        }
+        System.out.println(seb.currentStress);
+        // do stress for seb being near a teacher here! just like above but check around seb
         return getGameState();
     }
 
