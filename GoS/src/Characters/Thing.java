@@ -3,7 +3,7 @@
 import java.awt.Image;
 import java.awt.Rectangle;
 import javax.swing.ImageIcon;
-
+package GoS.src.Characters;
 public class Thing {
 
 
@@ -11,9 +11,14 @@ public class Thing {
     public int y;
     public int width;
     public int height;
+    public boolean isSolid;
     protected Image image;
 
-
+    public Thing()
+    {
+        x = 0;
+        y = 0;
+    }
 
     public Thing(int x, int y) {
 
