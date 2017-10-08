@@ -15,7 +15,7 @@ public abstract class Level {
 
     // handle key presses. return true if a turn should be taken.
     // some actions might need to have multiple buttons pressed in sequence
-    public abstract boolean recieveInput(KeyEvent e);
+    public abstract boolean receiveInput(KeyEvent e);
 
     public abstract GameState takeTurn();
 
@@ -28,7 +28,7 @@ public abstract class Level {
             }
         }
         // do other things
-        return new GameState(things);
+        return new GameState(things,seb);
     }
 
 }

@@ -58,12 +58,12 @@ public class GraphicsEngine extends JPanel  {
         gi.setColor(Color.white);
         gi.fillRect(0,0,30*18,30*18);
         //g.drawImage(img, x,y,width, height, null);
-        gi.setColor(Color.black);
-        gi.drawRect(100,100,100,100);
+
         for(Thing t: GS.things){
             gi.drawRect(t.x*16,t.y*16,16,16);
             t.draw(gi);
         }
+        GS.seb.draw(gi);
         // JUST SCALE THE BUFFERED IMAGE DRAW
         g.drawImage(bi,0,0,WIDTH, HEIGHT, null);
     }
@@ -80,7 +80,7 @@ public class GraphicsEngine extends JPanel  {
             if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
                 System.exit(0);
             }
-            if(levels.get(currentLevel).recieveInput(e))
+            if(levels.get(currentLevel).receiveInput(e))
                 turn();
         }
     }

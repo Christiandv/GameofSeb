@@ -41,6 +41,8 @@ public class Thing {
 
     public void draw(Graphics g){
         g.drawImage(image, x*16, y*16,16,16,null);
+        g.setColor(Color.black);
+        g.drawRect( x*16, y*16,16,16);
     }
 
     public Image getImage() {
