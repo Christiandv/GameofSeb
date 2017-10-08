@@ -1,6 +1,8 @@
 package Characters;
 
 
+import javax.swing.*;
+
 /**
  * Created by Caitlin on 10/7/2017.
  */
@@ -24,5 +26,7 @@ public class Seb extends Characters.Thing {
         raid = false;
         textbook = false;
         isSolid = true;
+        image = new ImageIcon("src/Characters/resources/seb.gif").getImage();
     }
+
 }
