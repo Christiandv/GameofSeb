@@ -88,7 +88,7 @@ public class Level2 extends Level {
         objects[15][4] = new Teacher();
         objects[16][20] = new Teacher();
         objects[2][22] = new Teacher();
-        objects[19][26] = new Teacher();
+        objects[10][10] = new Teacher();
 
         //block the inifity with invisible walls
         objects[14][18] = new InvisibleWall();

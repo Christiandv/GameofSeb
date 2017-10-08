@@ -33,7 +33,7 @@ public class Winning extends Level
 
         background = new BufferedImage(30 * 8, 30*8, BufferedImage.TYPE_INT_RGB);
         Graphics gi = background.getGraphics();
-        gi.setColor(Color.white);
+        gi.setColor(Color.gray);
         gi.fillRect(0,0,30*8,30*8);
         gi.setColor(Color.black);
         gi.drawString("Finally home, Seb can rest.",30*2-30,30*3+20);

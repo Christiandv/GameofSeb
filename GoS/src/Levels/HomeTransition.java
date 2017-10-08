@@ -34,8 +34,8 @@ public class HomeTransition extends Level
         gi.setColor(Color.white);
         gi.fillRect(0,0,30*8,30*8);
         gi.setColor(Color.BLACK);
-        gi.drawString("After classes, Seb heads home.",30*2-10,30*3+20);
-        gi.drawString("Press SPACE to continue",30*2-30,30*5+10);
+        gi.drawString("After classes, Seb heads home.",30*2-30,30*3+20);
+        gi.drawString("Press SPACE to continue",30*2-10,30*5-10);
 
     }
 

@@ -12,11 +12,25 @@ import java.awt.image.BufferedImage;
  */
 public class WalkToClass extends Level
 {
+    int counter = 0;
     @Override
     public boolean receiveInput(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE)
         {
-            nextLevel = true;
+            counter++;
+            if( counter == 1){
+                background = new BufferedImage(30 * 8, 30*8, BufferedImage.TYPE_INT_RGB);
+                Graphics gi = background.getGraphics();
+                gi.setColor(Color.white);
+                gi.fillRect(0,0,30*8,30*8);
+                gi.setColor(Color.BLACK);
+                gi.drawString("Quick! Make it past the humans!",30*2-30,30*3+20);
+                gi.drawString("Your class is due south!",30*2-10,30*5-20);
+                gi.drawString("Press SPACE to continue to class",30*2-30,30*5+10);
+            }else{
+                nextLevel = true;
+            }
+            //nextLevel = true;
             return true;
         }
         return false;
@@ -35,7 +49,7 @@ public class WalkToClass extends Level
         gi.setColor(Color.BLACK);
         gi.drawString("Seb has missed the bus,",30*2-10,30*3+20);
         gi.drawString("and walks the rest of the way to campus.",30*2-50,30*5-20);
-        gi.drawString("Press SPACE to continue to class",30*2-30,30*5+10);
+        gi.drawString("HE IS LATE!",30*2+20,30*5+10);
 
     }
 
