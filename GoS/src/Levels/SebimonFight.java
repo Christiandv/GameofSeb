@@ -82,7 +82,8 @@ public class SebimonFight extends Level {
         }
 
         else if (spiderHp <= 0) {
-            //win
+            nextLevel = true;
+            return true;
 
         }
 
