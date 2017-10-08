@@ -29,13 +29,13 @@ public class HomeTransition extends Level
         seb = new Seb(10, 20);
         seb.isVisable = false;
 
-        background = new BufferedImage(30 * 8, 30*8, BufferedImage.TYPE_INT_RGB);
+        background = new BufferedImage(16*16, 16*16, BufferedImage.TYPE_INT_RGB);
         Graphics gi = background.getGraphics();
         gi.setColor(Color.white);
-        gi.fillRect(0,0,30*8,30*8);
+        gi.fillRect(0,0,16*16,16*16);
         gi.setColor(Color.BLACK);
-        gi.drawString("After classes, Seb heads home.",30*2-30,30*3+20);
-        gi.drawString("Press SPACE to continue",30*2-10,30*5-10);
+        gi.drawString("After classes, Seb heads home.",30*2-20,30*3+20);
+        gi.drawString("Press SPACE to continue",30*2,30*5-10);
 
     }
 

@@ -23,7 +23,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class GraphicsEngine extends JPanel implements ActionListener{
     ArrayList<Level> levels = new ArrayList<Level>();
-    int currentLevel = 3;
+    int currentLevel = 7;
 
     BufferedImage bi;
     Graphics gi;
@@ -88,8 +88,12 @@ public class GraphicsEngine extends JPanel implements ActionListener{
         GS.seb.draw(gi);
         if(GS.stressBar) {
             gi.setColor(Color.lightGray);
+            gi.fillRect(7 * 16 - 5, 28 * 16 - 20, 40,20);
             gi.fillRect(7 * 16 - 5, 28 * 16 - 3 , 250, 20);
+            gi.setColor(Color.black);
+            gi.drawString("Stress:",7 * 16 - 5, 28 * 16 - 6 );
             gi.setColor(Color.green);
+
             gi.fillRect(7 * 16 + 3, 28 * 16, (int)(234 * ((double)GS.seb.currentStress /(double) GS.seb.maxStress)), 16);
             gi.drawImage(stressBar, 7 * 16, 28 * 16, 240, 16, null);
         }

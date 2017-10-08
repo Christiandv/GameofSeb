@@ -30,12 +30,12 @@ public class End extends Level
         objects[10][20] = new Ghost(10, 10);
         seb.isVisable = false;
 
-        background = new BufferedImage(30 * 8, 30*8, BufferedImage.TYPE_INT_RGB);
+        background = new BufferedImage(16*16, 16*16, BufferedImage.TYPE_INT_RGB);
         Graphics gi = background.getGraphics();
         gi.setColor(Color.black);
-        gi.fillRect(0,0,30*8,30*8);
+        gi.fillRect(0,0,16*16,16*16);
         gi.setColor(Color.white);
-        gi.drawString("the stress has overtaken poor Seb",30*2-30,30*3+20);
+        gi.drawString("the stress has overtaken poor Seb",30*2-22,30*3+20);
         gi.drawString("the final score is: " + seb.getFinalScore(),30*2,30*5-20);
         gi.drawString("Press SPACE to restart",30*2-10,30*5+10);
 
