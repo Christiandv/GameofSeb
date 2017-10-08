@@ -26,6 +26,16 @@ public class Game extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
+        //Sets screen size to maximum
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setUndecorated(true);
+        setVisible(true);
+
+        //rescales contents based on resolution and screen size
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds(0,0,screenSize.width, screenSize.height);
+        setVisible(true);
+
 
     }
     public void turn(){
