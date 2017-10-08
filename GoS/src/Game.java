@@ -29,7 +29,7 @@ public class Game extends JFrame {
 
         @Override
         public void keyReleased(KeyEvent e) {
-        
+
         }
 
         @Override
