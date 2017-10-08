@@ -27,9 +27,9 @@ public class Level2 extends Level {
                         seb.y--;
                         turnNum++;
                         return true;
-                    }else{
-                        if(t instanceof Teacher){
-                            seb.currentStress++;
+                    } else {
+                        if (t instanceof Teacher) {
+                            seb.addStress(1);
                         }
                     }
             }
@@ -46,9 +46,9 @@ public class Level2 extends Level {
                         seb.y++;
                         turnNum++;
                         return true;
-                    }else{
-                        if(t instanceof Teacher){
-                            seb.currentStress++;
+                    } else {
+                        if (t instanceof Teacher) {
+                            seb.addStress(1);
                         }
                     }
             }
@@ -65,9 +65,9 @@ public class Level2 extends Level {
                         seb.x--;
                         turnNum++;
                         return true;
-                    }else{
-                        if(t instanceof Teacher){
-                            seb.currentStress++;
+                    } else {
+                        if (t instanceof Teacher) {
+                            seb.addStress(1);
                         }
                     }
             }
@@ -84,9 +84,9 @@ public class Level2 extends Level {
                         seb.x++;
                         turnNum++;
                         return true;
-                    }else{
-                        if(t instanceof Teacher){
-                            seb.currentStress++;
+                    } else {
+                        if (t instanceof Teacher) {
+                            seb.addStress(1);
                         }
                     }
             }
@@ -94,10 +94,10 @@ public class Level2 extends Level {
         return false;
     }
 
-    public Level2(){
+    public Level2() {
 
         objects = new Characters.Thing[30][30];
-        seb = new Seb(4,2);
+        seb = new Seb(4, 2);
         stressBar = true;
         objects[6][10] = new Teacher();
         objects[20][15] = new Teacher();
@@ -143,60 +143,73 @@ public class Level2 extends Level {
         Thing[][] after = new Thing[30][30];
         //move a teacher depending on the turnNum and the random number. Move the teacher
         //into the "after" array. set object array to after array. start again
-        for(int i = 0; i < after.length; i++){
-            for(int j = 0; j < after[0].length; j++){
-                if(objects[i][j] != null){
-                    if(objects[i][j] instanceof Teacher){
-                        Teacher T = (Teacher)objects[i][j];
-                        if(turnNum%2 ==0){
+        for (int i = 0; i < after.length; i++) {
+            for (int j = 0; j < after[0].length; j++) {
+                if (objects[i][j] != null) {
+                    if (objects[i][j] instanceof Teacher) {
+                        Teacher T = (Teacher) objects[i][j];
+                        if (turnNum % 2 == 0) {
                             double r = Math.random();
-                            if(r<= .5){
-                                if(i+1 <= 29) {
-                                    after[i+1][j] = T;
-
-                                }else {
+                            if (r <= .5) {
+                                if (i + 1 <= 29) {
+                                    if (objects[i + 1][j] == null)
+                                        after[i + 1][j] = T;
+                                    else
+                                        after[i][j] = T;
+                                } else {
                                     after[i][j] = T;
                                 }
-                            }else{
-                                if(j+1 <=29) {
-                                    after[i][j + 1] = T;
-                                }else {
+                            } else {
+                                if (j + 1 <= 29) {
+                                    if (objects[i][j + 1] == null)
+                                        after[i][j + 1] = T;
+                                    else
+                                        after[i][j] = T;
+                                } else {
                                     after[i][j] = T;
                                 }
                             }
-                        }else{
+                        } else {
                             double r = Math.random();
-                            if(r<= .5){
-                                if(i-1 >= 0){
-                                    after[i-1][j] = T;
-                                }else {
+                            if (r <= .5) {
+                                if (i - 1 >= 0) {
+                                    if (objects[i - 1][j] == null)
+                                        after[i - 1][j] = T;
+                                    else
+                                        after[i][j] = T;
+                                } else {
                                     after[i][j] = T;
                                 }
-                            }else{
-                                if(j-1 >= 0) {
-                                    after[i][j - 1] = T;
-                                }else {
+                            } else {
+                                if (j - 1 >= 0) {
+                                    if (objects[i][j - 1] == null)
+                                        after[i][j - 1] = T;
+                                    else
+                                        after[i][j] = T;
+                                } else {
                                     after[i][j] = T;
                                 }
                             }
                         }
+                    } else {
+                        after[i][j] = objects[i][j];
                     }
                 }
             }
         }
 
         //if(seb.x == 15 && seb.y == 30){
-          //  nextLevel = true;
+        //  nextLevel = true;
         //}
         objects = after;
-        if(objects[seb.x][seb.y] != null){
-            if(objects[seb.x][seb.y] instanceof Teacher){
+        if (objects[seb.x][seb.y] != null) {
+            if (objects[seb.x][seb.y] instanceof Teacher) {
                 seb.addStress(10);
             }
         }
-        for( int i = seb.x-1; i<= seb.x+1 && i>=0 && i <30; i ++){
-            for( int j = seb.y-1; j <= seb.y+1 && j >=0 && j < 30; j++){
-                if( objects[i][j] instanceof Teacher){
+        for (int i = seb.x - 1; i <= seb.x + 1 && i >= 0 && i < 30; i++) {
+            for (int j = seb.y - 1; j <= seb.y + 1 && j >= 0 && j < 30; j++) {
+                if (objects[i][j] instanceof Teacher) {
                     seb.addStress(10);
                 }
             }
