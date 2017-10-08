@@ -27,10 +27,6 @@ public class Level2 extends Level {
                         seb.y--;
                         turnNum++;
                         return true;
-                    } else {
-                        if (t instanceof Teacher) {
-                            seb.addStress(1);
-                        }
                     }
             }
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
@@ -46,10 +42,6 @@ public class Level2 extends Level {
                         seb.y++;
                         turnNum++;
                         return true;
-                    } else {
-                        if (t instanceof Teacher) {
-                            seb.addStress(1);
-                        }
                     }
             }
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
@@ -65,10 +57,6 @@ public class Level2 extends Level {
                         seb.x--;
                         turnNum++;
                         return true;
-                    } else {
-                        if (t instanceof Teacher) {
-                            seb.addStress(1);
-                        }
                     }
             }
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
@@ -84,10 +72,6 @@ public class Level2 extends Level {
                         seb.x++;
                         turnNum++;
                         return true;
-                    } else {
-                        if (t instanceof Teacher) {
-                            seb.addStress(1);
-                        }
                     }
             }
         }
@@ -442,7 +426,7 @@ public class Level2 extends Level {
                 }
             }
         }
-        if(seb.x == 0 && seb.y >=29 || 14<= seb.x && seb.x >= 16 && seb.y >= 29 ){
+        if(seb.y >= 29 && seb.x >= 15 && seb.x <= 17 ){
             nextLevel = true;
         }
         //System.out.println(seb.currentStress);

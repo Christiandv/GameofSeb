@@ -85,6 +85,8 @@ public class GraphicsEngine extends JPanel implements ActionListener{
         }
         GS.seb.draw(gi);
         if(GS.stressBar) {
+            gi.setColor(Color.lightGray);
+            gi.fillRect(7 * 16 - 5, 28 * 16 - 3 , 250, 20);
             gi.setColor(Color.green);
             gi.fillRect(7 * 16 + 3, 28 * 16, (int)(234 * ((double)GS.seb.currentStress /(double) GS.seb.maxStress)), 16);
             gi.drawImage(stressBar, 7 * 16, 28 * 16, 240, 16, null);
@@ -114,7 +116,6 @@ public class GraphicsEngine extends JPanel implements ActionListener{
         GS=levels.get(currentLevel).takeTurn();
         if(GS.nextLevel == true){
             int stress = GS.seb.currentStress;
-            //GS.seb.currentStress = stress;
             if (stress == 100)
             {
                 this.currentLevel = 0;
@@ -125,6 +126,7 @@ public class GraphicsEngine extends JPanel implements ActionListener{
                 this.currentLevel++;
                 GS = levels.get(currentLevel).getGameState();
             }
+            GS.seb.currentStress = stress;
         }
        // repaint(GS);
         repaint();
